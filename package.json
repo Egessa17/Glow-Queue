@@ -1,0 +1,24 @@
+{
+  "name": "Glow Queue",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Egessa17/Glow-Queue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Egessa17/Glow-Queue/issues"
+  },
+  "homepage": "https://github.com/Egessa17/Glow-Queue#readme",
+  "description": "",
+  "dependencies": {
+    "Express": "^3.0.1"
+  }
+}
