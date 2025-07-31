@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Egessa17/Glow-Queue#readme",
   "description": "",
   "dependencies": {
+    "express": "^5.1.0",
     "Express": "^3.0.1"
   }
 }
