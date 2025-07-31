@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Booking page</title>
+        <link rel="stylesheet" href="styles.css"
+            type="text/css" />
+    </head>
+    <body id="booking">
+
+<!--Heading -->
+
+        <div class="header">
+            <h1 id="bookingHead">Twinkle Tips</h1>
+        </div>
+
+<!-- Form -->
+        
+        <form id="form" action="/submit"
+            method="POST" enctype="multipart/form-data">
+            <p><b>Name:</b>
+                <input type="text" name="Name" size="24"
+                    maxlength="20" />
+            </p>
+
+            <!--Manicure-->
+            <p><b>Service:</b>
+                <label>
+                    <input type="checkbox" name="service[]" value="manicure"  />
+                    Manicure
+                </label>
+                <select name="manicureType" required>
+                    <option value="">Select Type</option>
+                    <option value="Gel">Gel</option>
+                    <option value="Acrylics">Acrylics</option>
+                    <option value="Normal Polish">Normal Polish</option>
+                </select>
+                
+            <!--Pedicure-->
+                <br />
+                <label>
+                    <input type="checkbox" name="service[]" value="pedicure" />
+                    Pedicure
+                </label>
+                <select name="pedicureType" required>
+                    <option value="">Select Type</option>
+                    <option value="Gel">Gel</option>
+                    <option value="Acrylics">Acrylics</option>
+                    <option value="Normal Polish">Normal Polish</option>
+                </select>
+            </p>
+
+            <!--Time-->
+            <p><b>Time:</b>
+                <select name="time" required>
+                    <option value="">Select Time</option>
+                    <option value="6pm">6pm</option>
+                    <option value="7pm">7pm</option>
+                    <option value="8pm">8pm</option>
+                    <option value="9pm">9pm</option>
+                </select>
+            </p>     
+
+            <!--Comments-->
+            <p><b>Any specific details you would like me to know?</b></p>
+                <textarea name="comments" cols="40" rows="2" placeholder="Describe here..."></textarea>
+
+            <!--File upload-->
+            <p><b>Visual Description(Optional):</b></p>
+                <input type="file" name="image" accept="image/*"/> <br />
+
+            <!--Submit-->
+                <input type="submit" name="upload" value="Upload" />
+        </form>
+
+<!-- bottom of page-->
+        <div id="bottom">
+            <button id="endButton" onclick="document.getElementById('form').submit();"><b>Book Now</b></button>
+        </div>
+
+            <footer>
+                TwinkleTips&copy; 0774211764
+            </footer>
+
+        <script>
+            // Show alert if required fields are empty
+            document.getElementById("form").addEventListener("submit", function(e){
+                const name = document.querySelector('input[name="name"]').value;
+                const time = document.querySelector('select[name="time"]').value;
+
+                if (name.trim() === "" || time === "") {
+                    alert("Please enter your name and select a time.");
+                    e.preventDefault(); // Stops form submission
+                }
+            });
+
+           /* // Image preview before upload
+            const fileInput = document.querySelector('input[type="file"]');
+            fileInput.addEventListener("change", funtion () {
+                const file = fileInput.files[0];
+                if ( file && file.type.startsWith("image/")) {
+                    const reader = new FileReader();
+                    reader.onlaod = function (e) {
+                        const preview = document.createElement("img");
+                        preview.src = e.target.result;
+                        preview.style.width = "100px";
+                        preview.style.marginTop = "10px";
+                        fileInput.insertAdjacentElement("afterend", preview);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });*/
+        </script>
+    </body>
+</html>
